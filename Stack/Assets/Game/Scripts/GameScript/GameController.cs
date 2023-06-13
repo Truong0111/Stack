@@ -33,7 +33,7 @@ public class GameController : MonoBehaviour
     {
         Score = 0;
         Combo = 0;
-        HighScore = PlayerPrefs.GetInt(PrefConst.HIGH_SCORE);
+        HighScore = Pref.HighScore;
         IsGameOver = false;
         IsGameStart = true;
         ui.ShowGameOverPanel(false);
@@ -45,7 +45,7 @@ public class GameController : MonoBehaviour
         {
             PlayerPrefs.SetInt(PrefConst.HIGH_SCORE, Score);
         }
-        ui.SetHighScoreText(Score);
+        ui.SetHighScoreText(HighScore);
         ui.ShowGameOverPanel(true);
     }
     
